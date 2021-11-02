@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <TextView
+        android:id="@+id/tvVitri"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="15dp"
+        android:text="Vị trí"/>
+    <LinearLayout
+        android:id="@+id/linearTimkiem"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bo_search"
+        android:layout_below="@id/tvVitri"
+        >
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_search_24"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:hint="Bạn cần tìm món gì ?"
+            android:backgroundTint="@color/Transparent"
+            android:id="@+id/edSearch"/>
+
+    </LinearLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_below="@id/linearTimkiem"
+        android:id="@+id/viewPager"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="180dp"/>
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/circleIndi"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        app:ci_drawable="@drawable/bo_indicator"
+        android:layout_below="@id/viewPager"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="invisible"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rcvDanhmuc"
+        android:id="@+id/rcvFoodDM"/>
+   <androidx.recyclerview.widget.RecyclerView
+       android:visibility="visible"
+       android:layout_width="match_parent"
+       android:layout_height="75dp"
+       android:layout_below="@id/circleIndi"
+       android:id="@+id/rcvDanhmuc"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/rcvDanhmuc"
+        android:layout_marginTop="10dp"
+        android:background="#CCC4C4"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvRecommend"
+            android:text="Gần đây"
+            android:textSize="30dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@id/rcvDanhmuc"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rcvGanDay"
+            android:layout_below="@id/tvRecommend"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/tvSeeall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rcvGanDay"
+            android:text="Xem hết"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNew"
+            android:text="Mới"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_below="@id/tvSeeall"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvNew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNew"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" />
+
+
+
+
+</RelativeLayout>
+
+</ScrollView>
+    <LinearLayout
+        android:id="@+id/linearTotal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bo_giohang"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:layout_gravity="bottom"
+        app:layout_anchorGravity="bottom"
+       >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvGiaHopThoai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+
+            <ImageView
+                android:id="@+id/imgMuiten"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="200dp"
+                android:src="@drawable/shopping_cart_24" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+        <include layout="@layout/layout_bottom_sheet" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+

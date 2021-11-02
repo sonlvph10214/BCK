@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="240dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/bo_danhmuc">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/imgRcvGanDay"/>
+
+    <TextView
+        android:id="@+id/tvTenGanDay"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgRcvGanDay"
+        android:layout_marginTop="10dp"
+        android:text="textttttttttttttttt"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tvDiaChiGanDay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="textttttttttttttttt"
+        android:layout_below="@id/tvTenGanDay"
+        android:textSize="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/imgStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_star"
+        android:layout_toLeftOf="@id/tvStarGanDay"
+        android:layout_marginTop="9dp"
+        android:layout_below="@id/imgRcvGanDay"/>
+    <TextView
+        android:id="@+id/tvStarGanDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/imgRcvGanDay"
+        android:text="4.5"
+        android:textSize="14dp"
+        />
+
+</RelativeLayout>

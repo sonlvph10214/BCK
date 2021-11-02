@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/imgFoodMoi"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="textttttttttt"
+        android:id="@+id/tvFoodMoi"
+        android:layout_toRightOf="@id/imgFoodMoi"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="32.000"
+        android:id="@+id/tvGiaGiam"
+        android:layout_toRightOf="@id/imgFoodMoi"
+        android:layout_below="@id/tvFoodMoi"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textColor="#CF2323"
+        />
+
+    <TextView
+        android:id="@+id/tvGia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFoodMoi"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/tvGiaGiam"
+        android:text="20.000"
+        android:textColor="#171616"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:foreground="@drawable/gachngang"/>
+
+    <ImageView
+        android:id="@+id/imgAddFood"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tvFoodMoi"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/addfood" />
+
+</RelativeLayout>

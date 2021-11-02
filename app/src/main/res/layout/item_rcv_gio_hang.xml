@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/swipeLayout"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:mode="same_level"
+    app:dragEdge="right">
+    <LinearLayout
+        android:id="@+id/linearDel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/delete"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imgRcvBottom"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/tvNameRcvBotom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name Food"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/imgRcvBottom"/>
+
+        <TextView
+            android:id="@+id/tvGiaRcvBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNameRcvBotom"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/imgRcvBottom"
+            android:text="0"
+            android:textSize="20dp" />
+
+
+
+            <ImageView
+                android:id="@+id/imgTru"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toLeftOf="@id/tvSoLuong"
+                android:src="@drawable/tru"
+                />
+            <TextView
+                android:id="@+id/tvSoLuong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/imgCong"
+                android:layout_marginRight="10dp"
+                android:text="0"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                />
+            <ImageView
+                android:id="@+id/imgCong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/congsl"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"/>
+       </RelativeLayout>
+
+
+
+
+</com.chauthai.swipereveallayout.SwipeRevealLayout>

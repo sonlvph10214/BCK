@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ThongTinActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:id="@+id/imgBackDetail"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông Tin"
+            android:textSize="20dp"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bo_thongtin"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:id="@+id/tvUserDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên đăng nhập"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/tvUserNameDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:drawableRight="@drawable/ic_arrow"
+            android:drawablePadding="5dp"
+            android:text="admin"
+            android:textSize="20dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bo_thongtin"
+        android:layout_below="@id/linear1"
+        android:layout_marginTop="10dp"
+       >
+        <TextView
+            android:id="@+id/tvNameDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Họ và Tên"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/tvFullNameDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:drawableRight="@drawable/ic_arrow"
+            android:drawablePadding="5dp"
+            android:text="Le Văn Sơn"
+            android:textSize="20dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bo_thongtin"
+        android:layout_below="@id/linear2"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/tvNEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/tvEmailDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:drawableRight="@drawable/ic_arrow"
+            android:drawablePadding="5dp"
+            android:text="admin@gmail.com"
+            android:textSize="20dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bo_thongtin"
+        android:layout_below="@id/linear3"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/tvNGioiTinh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giới Tính"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/tvGioiTinhDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:drawableRight="@drawable/ic_arrow"
+            android:drawablePadding="5dp"
+            android:text="Nam"
+            android:textSize="20dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bo_thongtin"
+        android:layout_below="@id/linear4"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/tvNSDT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/tvPhoneDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:drawableRight="@drawable/ic_arrow"
+            android:drawablePadding="5dp"
+            android:text="0987654321"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>
