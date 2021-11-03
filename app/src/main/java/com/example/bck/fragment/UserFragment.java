@@ -39,12 +39,7 @@ public class UserFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user,container,false);
 
-        binding.tvDoiMK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragContainer, new ChangePassFragment()).commit();
-            }
-        });
+
         if (getArguments()!= null){
             user = getArguments().getString("user");
             name = getArguments().getString("personName");

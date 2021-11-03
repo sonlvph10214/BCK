@@ -16,7 +16,10 @@ import com.bumptech.glide.Glide;
 import com.chauthai.swipereveallayout.SwipeRevealLayout;
 import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.example.bck.R;
+import com.example.bck.activity.HomeActivity;
+import com.example.bck.fragment.HomeFragment;
 import com.example.bck.model.FoodMoi;
+import com.example.bck.onClick.IFoodClickListener;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -25,13 +28,17 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
     List<FoodMoi> foodList;
     Context context;
     private ViewBinderHelper viewBinderHelper = new ViewBinderHelper();
+    IFoodClickListener iFoodClickListener;
+    int count =1;
 
 
     public ShoppingCartAdapter(List<FoodMoi> foodList, Context context) {
         this.context= context;
         this.foodList = foodList;
     }
-
+    public void setClick(IFoodClickListener iFoodClickListener) {
+        this.iFoodClickListener = iFoodClickListener;
+    }
 
 
     @NonNull
@@ -57,6 +64,12 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
             public void onClick(View v) {
                 foodList.remove(holder.getAdapterPosition());
                 notifyItemRemoved(holder.getAdapterPosition());
+            }
+        });
+        holder.imgCong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.tvSoluong.setText(String.valueOf(count++));
             }
         });
     }

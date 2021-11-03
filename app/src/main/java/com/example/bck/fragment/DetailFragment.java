@@ -49,7 +49,14 @@ public class DetailFragment extends Fragment {
         binding.imgBackDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragContainer, new HomeFragment()).commit();
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+
+        binding.imgAddDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
         return binding.getRoot();

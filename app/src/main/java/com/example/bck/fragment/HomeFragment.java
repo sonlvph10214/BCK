@@ -1,12 +1,16 @@
 package com.example.bck.fragment;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,10 +73,12 @@ public class HomeFragment extends Fragment{
     AdapterFoodMoi adapterFoodMoi;
     List<FoodDanhMuc> foodDanhMucList;
     List<TraSua> traSuaList;
-    TextView tvGanday,tvXem,tvMoi,tvGiaThoai,tvGiaBottom;
+    TextView tvGanday,tvXem,tvMoi,tvGiaThoai,tvGiaBottom,tvSoLuong;
     BottomSheetBehavior bottomSheetBehavior;
     LinearLayout layoutBottomSheet,linearTotal;
     double sum;
+    EditText edSearch;
+    int count = 1;
 
     public static HomeFragment newInstance(FoodMoi foodMoi) {
 
@@ -112,6 +118,8 @@ public class HomeFragment extends Fragment{
         tvGiaBottom = view.findViewById(R.id.tvGiaBottom);
         layoutBottomSheet = view.findViewById(R.id.bottomSheet);
         linearTotal = view.findViewById(R.id.linearTotal);
+        edSearch = view.findViewById(R.id.edSearch);
+        tvSoLuong = view.findViewById(R.id.tvSoLuong);
 
         bottomSheetBehavior = BottomSheetBehavior.from(layoutBottomSheet);
 
@@ -141,13 +149,36 @@ public class HomeFragment extends Fragment{
         hienThiDM();
         onGetGanDay();
         hienthiFoodMoi();
-        //hienthiFoodMoi1();
-        danhmucItem();
+        searchView();
         return view;
 
     }
-    private void danhmucItem(){
+    private void searchView(){
+        edSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
+    }
+    private void filter(String text){
+        ArrayList<FoodMoi> foodMoiArrayList = new ArrayList<>();
+        for (FoodMoi item : foodMoiList){
+            if (item.getTenmon().toLowerCase().contains(text.toLowerCase())){
+                foodMoiArrayList.add(item);
+            }
+        }
+        adapterFoodMoi.filterList(foodMoiArrayList);
     }
 
     private void hienThiDM() {
@@ -278,6 +309,19 @@ public class HomeFragment extends Fragment{
                         rcvShopping.setLayoutManager(linearLayoutManager2);
                         rcvShopping.setAdapter(shoppingCartAdapter);
 
+                        shoppingCartAdapter.setClick(new IFoodClickListener() {
+                            @Override
+                            public void onFoodClick(FoodMoi food) {
+                                soluong();
+                                sum += foodMoi.getGiamGia()*count;
+                            }
+
+                            @Override
+                            public void onMyClick(FoodMoi food, int position) {
+
+                            }
+                        });
+
                         tvGiaBottom.setText(new DecimalFormat("##.000").format(sum)+"đ");
                     }
                 });
@@ -288,6 +332,9 @@ public class HomeFragment extends Fragment{
                 Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public void soluong(){
+        count++;
     }
 //    private  void hienthiFoodMoi1(){
 //
@@ -332,7 +379,7 @@ public class HomeFragment extends Fragment{
 //                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
 //            }
 //        });
-//    }
+//  
     private  void onGetGanDay(){
 
         Call<List<FoodGanDay>> call = APIClient.create().onGet();
@@ -404,4 +451,6 @@ public class HomeFragment extends Fragment{
             timer=null;
         }
     }
+
+
 }
